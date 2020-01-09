@@ -1,0 +1,47 @@
+LCOM 1920 
+
+Open LCOM-VM in Linux terminal:
+ssh lcom@127.0.0.1 -p 2222
+Pass:
+lcom
+
+See output (printf()'s):
+tail -f /var/log/messages
+
+Add content to SVN Repos:
+cd ~/labs
+svn import --username up201808546 lab2 https://svn.fe.up.pt/repos/lcom1920-t3g04/lab4  -m "Imported lab4/"
+
+Creating a working copy:
+svn checkout --username up201808546 https://svn.fe.up.pt/repos/lcom1920-t3g04/proj ./proj --force
+
+Refresh SVN Repos:
+svn commit -m "refresh"
+
+Refresh and see if it's everything allright:
+svn status
+
+Removing working copy:
+cd ~/labs
+rm -r lab2
+cd ~/labs
+ls -la
+
+New working copy:
+cd ~/labs
+svn checkout https://svn.fe.up.pt/repos/lcom1920-t3g04/lab3
+
+Compile:
+make clean 
+make (small projects)
+
+make clean && make
+
+make depend
+make (big projects)
+
+lcom_run lab?
+lcom_stop lab?
+
+Quit:
+poweroff 
