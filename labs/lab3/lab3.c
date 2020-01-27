@@ -136,7 +136,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
   int ipc_status;
   message msg;
   uint32_t r;
-  unsigned int counter;
+  unsigned int counter = 0;
 
   bool two_bytes = false;
   uint8_t bytes[2];
