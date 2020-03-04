@@ -1,0 +1,54 @@
+#ifndef _LCOM_CODES_H_
+#define _LCOM_CODES_H_
+
+#define SCAN_ESC 0x01
+#define BREAK_ESC 0x81
+
+#define SCAN_SPACE 0x39
+#define SCAN_ENTER 0x1c
+
+// W, A, D, Sa
+#define SCAN_UP 0x11
+#define SCAN_LEFT 0x1E
+#define SCAN_RIGHT 0x20
+#define SCAN_DOWN 0x1F
+
+#define SCAN_1 0x02 || 0x4F
+#define SCAN_2 0x03 || 0x50
+#define SCAN_3 0x04 || 0x51
+#define SCAN_4 0x05 || 0x4B
+#define SCAN_5 0x06 || 0x4C
+#define SCAN_6 0x07 || 0x4D
+#define SCAN_7 0x08 || 0x47
+#define SCAN_8 0x09 || 0x48
+#define SCAN_9 0x0A || 0x49
+#define SCAN_0 0x0B || 0x52
+
+#define SCAN_A 0x1E
+#define SCAN_B 0x30
+#define SCAN_C 0x2E
+#define SCAN_D 0x20
+#define SCAN_E 0x12
+#define SCAN_F 0x21
+#define SCAN_G 0x22
+#define SCAN_H 0x23
+#define SCAN_I 0x17
+#define SCAN_J 0x24
+#define SCAN_K 0x25
+#define SCAN_L 0x26
+#define SCAN_M 0x32
+#define SCAN_N 0x31
+#define SCAN_O 0x18
+#define SCAN_P 0x19
+#define SCAN_Q 0x10
+#define SCAN_R 0x13
+#define SCAN_S 0x1F
+#define SCAN_T 0x14
+#define SCAN_U 0x16
+#define SCAN_V 0x2F
+#define SCAN_W 0x11
+#define SCAN_X 0x2D
+#define SCAN_Y 0x15
+#define SCAN_Z 0x2C
+
+#endif /* _LCOM_CODES_H */

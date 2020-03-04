@@ -1,0 +1,15 @@
+#ifndef _LCOM_VBE_H_
+#define _LCOM_VBE_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+
+#define VIDEOCARD_SERVICE 0x10
+#define PC_CONFIGURATION_SERVICE 0x11
+#define MEMORY_CONFIGURATION_SERVICE 0x12
+#define KEYBOARD_SERVICE 0x16
+
+
+
+#endif /* _LCOM_VBE_H */
+

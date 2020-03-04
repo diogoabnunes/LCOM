@@ -1,0 +1,4 @@
+<map id="drawMainMenu" name="drawMainMenu">
+<area shape="rect" id="node1" title="Desenha o menu inicial." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$video_8c.html#a78a5d8f65149c64461c4faeac43f8407" title="Esta função desenha uma imagem xpm no ecrã." alt="" coords="176,5,293,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="createDeck" name="createDeck">
+<area shape="rect" id="node1" title="Esta função prepara o deck para um jogo." alt="" coords="5,31,101,57"/>
+<area shape="rect" id="node2" href="$cards_8c.html#ac0d9dd174b552b679132b24fb5aaffb9" title="Esta função embaralha as cores jogáveis para que cada jogo tenha cores diferentes." alt="" coords="149,5,257,32"/>
+<area shape="rect" id="node3" href="$cards_8c.html#a5456ca7b1ebe815ec5ba04af64b83b59" title="Esta função embaralha o deck de cartas para que cada jogo tenha posições diferentes." alt="" coords="153,56,253,83"/>
+</map>

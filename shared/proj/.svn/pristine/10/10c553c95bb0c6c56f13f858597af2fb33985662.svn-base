@@ -1,0 +1,24 @@
+<map id="manage_states" name="manage_states">
+<area shape="rect" id="node1" title="Esta função lida com os eventos do teclado." alt="" coords="5,326,128,352"/>
+<area shape="rect" id="node2" href="$xpms_8c.html#a094e5571a5243a9f958be215abb8c5af" title="Desenha o plano de fundo." alt="" coords="176,22,307,48"/>
+<area shape="rect" id="node4" href="$cards_8c.html#aecdc9b7a7b3978aff488255349ae196f" title="Esta função desenha as cartas do jogo." alt="" coords="196,98,287,124"/>
+<area shape="rect" id="node7" href="$xpms_8c.html#afb080b065468eb6c4415f60db741f8f8" title="Desenha o menu de instruções." alt="" coords="176,180,307,207"/>
+<area shape="rect" id="node8" href="$xpms_8c.html#aeb592a1d5d51ea02321528008f1e5187" title="Desenha o menu inicial." alt="" coords="180,294,303,320"/>
+<area shape="rect" id="node9" href="$game_8c.html#a0a0c3bb13d2afbcdd32aa1edf938cc87" title="Esta função desenha o número de segundos que passaram durante o jogo." alt="" coords="198,452,285,479"/>
+<area shape="rect" id="node20" href="$xpms_8c.html#a3f87ee03e9e91170a9a0fd03ada15d10" title=" " alt="" coords="190,630,293,656"/>
+<area shape="rect" id="node21" href="$xpms_8c.html#ade613dca636bfc876dfe781009cbf23a" title="Desenha a tela de derrota." alt="" coords="188,680,295,707"/>
+<area shape="rect" id="node22" href="$xpms_8c.html#a07bacf25a86be1ae219337a2f2eb8a92" title="Desenha a tela de vitória." alt="" coords="191,731,292,758"/>
+<area shape="rect" id="node3" href="$video_8c.html#a78a5d8f65149c64461c4faeac43f8407" title="Esta função desenha uma imagem xpm no ecrã." alt="" coords="533,427,651,454"/>
+<area shape="rect" id="node5" href="$cards_8c.html#a850a010509db909def679d6021708c2d" title="Esta função desenha a parte da frente da carta." alt="" coords="355,47,485,74"/>
+<area shape="rect" id="node6" href="$cards_8c.html#a3a246589d2f02d52fac8a705ac162a7f" title="Esta função desenha a parte de trás da carta." alt="" coords="357,98,483,124"/>
+<area shape="rect" id="node10" href="$xpms_8c.html#a197c6ebf3d393ec01fd3fc0469f14d24" title="Desenha o algarismo 0." alt="" coords="389,250,451,276"/>
+<area shape="rect" id="node11" href="$xpms_8c.html#abca830b21e20abb11abca7dc4ad391b9" title="Desenha o algarismo 1." alt="" coords="389,300,451,327"/>
+<area shape="rect" id="node12" href="$xpms_8c.html#a193cf48fd1766ea23f2de83d7b20aa1f" title="Desenha o algarismo 2." alt="" coords="389,351,451,378"/>
+<area shape="rect" id="node13" href="$xpms_8c.html#af8b1e4a597ad32f4422692d16e7fe469" title="Desenha o algarismo 3." alt="" coords="389,402,451,428"/>
+<area shape="rect" id="node14" href="$xpms_8c.html#ac743590d5543d92201ab9464e5b7a6ca" title="Desenha o algarismo 4." alt="" coords="389,452,451,479"/>
+<area shape="rect" id="node15" href="$xpms_8c.html#ab3b2bf50948ea2fdc42c384c480d35e7" title="Desenha o algarismo 5." alt="" coords="389,503,451,530"/>
+<area shape="rect" id="node16" href="$xpms_8c.html#a8841007c107da645526554fb3b639756" title="Desenha o algarismo 6." alt="" coords="389,554,451,580"/>
+<area shape="rect" id="node17" href="$xpms_8c.html#ac4684d2e5916b06554cd336c76d05709" title="Desenha o algarismo 7." alt="" coords="389,604,451,631"/>
+<area shape="rect" id="node18" href="$xpms_8c.html#a078254f0a672afa6804476accbd3c172" title="Desenha o algarismo 8." alt="" coords="389,655,451,682"/>
+<area shape="rect" id="node19" href="$xpms_8c.html#a9d2327c833ea334bda58ce89679f59ca" title="Desenha o algarismo 9." alt="" coords="389,706,451,732"/>
+</map>

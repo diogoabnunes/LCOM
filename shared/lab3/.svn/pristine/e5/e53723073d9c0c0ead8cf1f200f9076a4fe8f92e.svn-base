@@ -1,0 +1,9 @@
+@lcflib.a:2019, lcf_start
+  kbd_test_scan()
+  @kbc.c:14, kbc_subscribe_int
+    sys_irqsetpolicy(KEYBOARD_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &kbcID)
+  > sys_irqsetpolicy(1, 3, addr: 0x8196518 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x8196518 [10]) -> (ret: 0)
+  @lab3.c:49, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff7c0, addr: 0xeffff808)

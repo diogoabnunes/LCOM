@@ -1,0 +1,6 @@
+<map id="drawCards" name="drawCards">
+<area shape="rect" id="node1" title="Esta função desenha as cartas do jogo." alt="" coords="5,31,96,57"/>
+<area shape="rect" id="node2" href="$cards_8c.html#a850a010509db909def679d6021708c2d" title="Esta função desenha a parte da frente da carta." alt="" coords="144,5,275,32"/>
+<area shape="rect" id="node4" href="$cards_8c.html#a3a246589d2f02d52fac8a705ac162a7f" title="Esta função desenha a parte de trás da carta." alt="" coords="146,56,273,83"/>
+<area shape="rect" id="node3" href="$video_8c.html#a78a5d8f65149c64461c4faeac43f8407" title="Esta função desenha uma imagem xpm no ecrã." alt="" coords="323,31,440,57"/>
+</map>

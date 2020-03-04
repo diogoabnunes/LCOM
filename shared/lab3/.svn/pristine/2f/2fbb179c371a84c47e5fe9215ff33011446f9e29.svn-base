@@ -1,0 +1,16 @@
+@lcflib.a:2019, lcf_start
+  kbd_test_timed_scan(n)
+> kbd_test_timed_scan(0)
+  @kbc.c:18, kbc_subscribe_int
+    sys_irqsetpolicy(KEYBOARD_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &kbcID)
+  > sys_irqsetpolicy(1, 3, addr: 0x81bd354 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x81bd354 [10]) -> (ret: 0)
+  @lab3.c:153, kbd_test_timed_scan
+    timer_subscribe_int(&bit_timer)
+  > timer_subscribe_int(addr: 0xeffff75c [141])
+    @./timer.c:55, timer_subscribe_int
+      sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timerID)
+    > sys_irqsetpolicy(0, 1, addr: 0x81bd350 [3])
+    < sys_irqsetpolicy(0, 1, addr: 0x81bd350 [11]) -> (ret: 0)
+  < timer_subscribe_int(addr: 0xeffff75c [3]) -> (ret: 0)
+< kbd_test_timed_scan(0) -> (ret: 0)

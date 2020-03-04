@@ -1,0 +1,50 @@
+#include "kbc.h"
+
+extern int sysCounter; //Declaring counter for function sys_inb() calls
+extern int kbcID; //Declaring identification hook for keyboard configuration
+
+
+int kbc_subscribe_int(uint8_t *bit_no)
+{
+	if(bit_no == 0)
+    	return 1; //Testing for null pointer
+
+  	*bit_no = (*bit_no) | BIT(kbcID); 
+
+  	if(sys_irqsetpolicy(KEYBOARD_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &kbcID) != 0) {
+  		printf("Error subscribing KBC interrupt...\n");
+    	return 1; //Returns 1 and prints error upon error in calling function
+    }
+
+  	return 0; //Returns 0 upon success
+}
+
+int kbc_unsubscribe_int() {
+	if(sys_irqrmpolicy(&kbcID) != 0) {
+    	printf("Error unsubscribing KBC interrupt...\n");
+    	return 1; //Returns 1 and prints error upon error in calling function
+	}
+
+  	return 0; //Returns 0 upon success
+}
+
+int sys_inb_count(port_t port, uint32_t *byte)
+{
+	int res = sys_inb(port, byte); //Tests for error
+	sysCounter++; //Increments counter everytime the function is called
+
+  	return res; //Returns 0 if successful, 1 otherwise
+}
+
+int util_sys_inb(port_t port, uint8_t *byte)
+{
+	uint32_t temp; //Temporary variable for calling sys_inb() function
+
+  	if (sys_inb_count(port, &temp) != 0) //Tests for error
+    	return 1; //Returns 1 if there's an error
+
+  	(*byte) = (uint8_t) temp; //Cast
+
+  	return 0; //Returns 0 upon success
+}
+

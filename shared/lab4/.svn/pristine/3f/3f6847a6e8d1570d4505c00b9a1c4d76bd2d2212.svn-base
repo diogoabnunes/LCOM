@@ -1,0 +1,242 @@
+#include "mouse.h"
+
+int hook_id_mouse = 2;
+extern uint32_t status;
+extern struct packet pp;
+extern uint16_t packet[3];
+
+int (mouse_subscribe_int)(uint8_t *bit_no)
+{
+  *bit_no = hook_id_mouse;
+
+  //checks if the sys call was valid
+  if (sys_irqsetpolicy(MOUSE_IRQ, (IRQ_REENABLE | IRQ_EXCLUSIVE), &hook_id_mouse) != OK)
+    return 1;
+
+  return 0;
+}
+
+int mouse_unsubscribe_int()
+{
+  if (sys_irqrmpolicy(&hook_id_mouse) != 0)
+    return 1;
+
+  return 0;
+}
+
+void (mouse_ih)() 
+{
+  uint32_t status_reg;
+
+  if (sys_inb(STAT_REG, &status_reg) != 0)// Gets status
+    return;
+
+  if ((status_reg & OBF_FULL)==OBF_FULL) { // Checks if Out_buffer is full. It needs to be in order to read data from it
+    
+    if (sys_inb(OUT_BUF, &status) != 0) // Retrieve data from output buffer
+      return;
+
+    if ((status_reg & (PARITY_ERROR | TIMEOUT_ERROR)) == 0)
+      return;
+    else
+      return; // parity or timeout error
+  }
+  return;
+}
+
+void packet_create()
+{
+  pp.bytes[0] = packet[0];
+  pp.bytes[1] = packet[1];
+  pp.bytes[2] = packet[2];
+
+  pp.lb = (packet[0] & MOUSE_LB);
+  pp.rb = (packet[0] & MOUSE_RB) >> 1;
+  pp.mb = (packet[0] & MOUSE_MB) >> 2;
+
+  if((packet[0] & MOUSE_XSIGN) >> 4 == 0)
+  {
+    pp.delta_x = (packet[1] & 0x00FF);
+  }
+  else
+  {
+    pp.delta_x = (packet[1] | 0xFF00); 
+    }
+  
+  if((packet[0] & MOUSE_YSIGN) >> 5 == 0)
+  {
+    pp.delta_y = (packet[2] & 0x00FF);
+  }
+  else
+  {
+    pp.delta_y = (packet[2] | 0xFF00); 
+    }
+  
+  pp.x_ov = (packet[0] & MOUSE_XOVF) >> 6;
+  pp.y_ov = (packet[0] & MOUSE_YOVF) >> 7;
+}
+
+int write_mouse(uint32_t command) {
+
+  uint32_t data;
+
+  while (1) {
+    if (write_kbc(STAT_REG, WRITE_MOUSE) == 1)
+      return 1;
+
+    if (write_kbc(OUT_BUF, command) == 1)
+      return 1;
+
+    sys_inb(OUT_BUF, &data);
+
+    if (data == MOUSE_ACK)
+      return 0;
+    }
+}
+
+int read_kbc(uint32_t * data) {
+  uint32_t stat;
+  while (1) {
+    if (sys_inb(STAT_REG, &stat))
+      return 1;
+
+    if (stat & OBF_FULL)
+      return sys_inb(OUT_BUF, data);
+    
+    tickdelay(micros_to_ticks(DELAY_US));
+  }
+}
+
+int write_kbc(uint32_t port, uint32_t cmd) {
+  uint32_t stat;
+  while (1) {
+    sys_inb(STAT_REG, &stat);
+      
+    if ((stat & IBF_FULL) == 0)
+      return sys_outb(port, cmd);
+  
+    tickdelay(micros_to_ticks(DELAY_US));    
+  }
+}
+
+
+void mouse_event_detect(struct packet *pp, state_t state)
+{
+  switch(state)
+  {
+    case INITIAL_STATE: //Initial state
+      if(pp->lb && !pp->mb && !pp->rb) //If only the left button is pressed
+        m_ev.type = LB_PRESSED;
+      else if(pp->mb || pp->rb) //If any other button combination is pressed
+        m_ev.type = BUTTON_EV;
+      else //If no button is pressed
+        m_ev.type = MOUSE_MOV;
+      break;
+
+    case LEFT_LINE: //Drawing left line state
+      if(pp->lb && !pp->mb && !pp->rb) //If only the left button is pressed
+        m_ev.type = MOUSE_MOV; //event is MOUSE_MOV because the left button has already been pressed
+      else if(pp->mb || pp->rb) //If any other button combination is pressed
+        m_ev.type = BUTTON_EV;
+      else //If no button is pressed, it means that the left button has been released
+        m_ev.type = LB_RELEASED;
+      break;
+
+    case VERTEX: //At vertex of inverted V state
+      if(pp->mb) //If the middle button is pressed
+        m_ev.type = BUTTON_EV;
+      else if(pp->lb) //If the left button is pressed
+        m_ev.type = LB_PRESSED;
+      else if(pp->rb) //If the right button is pressed
+        m_ev.type = RB_PRESSED;
+      else //If no button is pressed
+        m_ev.type = MOUSE_MOV;
+      break;
+
+    case RIGHT_LINE: //Drawing right line state
+      if(!pp->lb && !pp->mb && pp->rb) //If only right button pressed
+        m_ev.type = RB_PRESSED;
+      else if(pp->lb || pp->mb) //If any other button combination is pressed
+        m_ev.type = BUTTON_EV;
+      else //If no button is pressed, it means that the right button has been released
+        m_ev.type = RB_RELEASED;
+      break;
+
+    default: //This state will not be reached
+      m_ev.type = MOUSE_MOV;
+      break;
+  }
+
+  m_ev.delta_x = pp->delta_x;
+  m_ev.delta_y = pp->delta_y;
+}
+
+void handle_mouse_event(struct mouse_ev event, state_machine_t *st_machine, uint8_t x_len, uint8_t tolerance) //To be done
+{
+  switch(st_machine->currentState)
+  {
+    case INITIAL_STATE: //If in initial state, check if left button is pressed //This one is done!
+      if(event.type == LB_PRESSED)
+        st_machine->currentState = LEFT_LINE; //If it is, then move on to the next state
+      break;
+
+
+    case LEFT_LINE: //If writing the left line:
+      if(event.type == MOUSE_MOV) 
+      {
+        if(-1 * event.delta_x > tolerance || -1 * event.delta_y > tolerance) //If there's a negative displacement in x or y and it's greater than the tolerance
+        {
+          st_machine->currentState = INITIAL_STATE; //Then go back to intial state
+          st_machine->x_displacement = 0;
+          st_machine->y_displacement = 0;
+        }
+        else //If conditions OK, updates displacements
+        {
+              st_machine->x_displacement += event.delta_x;
+              st_machine->y_displacement += event.delta_y;
+        }
+
+      }
+      else if(event.type == LB_RELEASED)
+      {
+        double x = abs(st_machine->x_displacement);
+        double y = abs(st_machine->y_displacement);
+
+        if ((x >= x_len) && ((y/x) > 1)) // x_line is done
+        {
+          st_machine->currentState = VERTEX;
+          st_machine->x_displacement = 0;
+          st_machine->y_displacement = 0;
+        }
+      }
+      else if(event.type == BUTTON_EV) //If any other button combination, go back to initial state
+      {
+        st_machine->currentState = INITIAL_STATE;
+        st_machine->x_displacement = 0;
+        st_machine->y_displacement = 0;
+      }
+      break;
+
+    case VERTEX:
+      break;
+
+    case RIGHT_LINE:
+      break;
+
+    case FINAL_STATE: //If in final state, break //This one is done!
+      break;
+
+    default:
+      break;
+
+  }
+}
+
+int check_gesture(uint8_t x_len, uint8_t tolerance) {
+
+  mouse_event_detect(&pp);
+  handle_mouse_event(m_ev, state_machine_t, x_len, tolerance);
+  if (state_machine_t.currentState == FINAL_STATE)
+    return 1; // Gesture completed
+  return 0; // continue
+}

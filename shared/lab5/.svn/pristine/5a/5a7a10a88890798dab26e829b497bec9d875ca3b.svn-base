@@ -1,0 +1,14 @@
+#ifndef _LCOM_VIDEO_H_
+#define _LCOM_VIDEO_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+#include <machine/int86.h> // /usr/src/include/arch/i386
+#include "vbe.h"
+
+int set_graphics_mode(uint16_t mode);
+int vg_init(uint16_t mode);
+
+void mapping_VRAM();
+
+#endif /* _LCOM_VIDEO_H */

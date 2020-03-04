@@ -1,0 +1,5 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="node1" title="Esta função é o interrupt handler do teclado." alt="" coords="5,5,69,32"/>
+<area shape="rect" id="node2" href="$keyboard_8c.html#a60a97c4572b60c08e55ff7e053942678" title="Esta função chama sys_inb e incrementa um contador de chamadas de sys_inb." alt="" coords="332,5,447,32"/>
+<area shape="rect" id="node3" href="$keyboard_8c.html#a8b658c523d9ebc5c760114316d4751a6" title="Esta função chama sys_inb_count e faz o cast necessário." alt="" coords="117,31,284,57"/>
+</map>

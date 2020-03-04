@@ -1,0 +1,20 @@
+#ifndef _LCOM_MOUSE_H_
+#define _LCOM_MOUSE_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+#include "i8042.h"
+
+int mouse_subscribe_int(uint8_t *bit_no);
+int mouse_unsubscribe_int();
+
+void (mouse_ih)();
+
+void packet_create();
+
+int write_mouse(uint32_t command);
+int read_kbc(uint32_t * data);
+int write_kbc(uint32_t port, uint32_t cmd);
+
+
+#endif /* _LCOM_MOUSE_H */

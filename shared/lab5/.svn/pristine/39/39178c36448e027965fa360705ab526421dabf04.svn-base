@@ -1,0 +1,123 @@
+// IMPORTANT: you must include the following line in all your C files
+#include <lcom/lcf.h>
+#include <lcom/lab5.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <machine/int86.h>
+
+// Any header files included below this line should have been created by you
+
+int main(int argc, char *argv[]) {
+  // sets the language of LCF messages (can be either EN-US or PT-PT)
+  lcf_set_language("EN-US");
+
+  // enables to log function invocations that are being "wrapped" by LCF
+  // [comment this out if you don't want/need it]
+  lcf_trace_calls("/home/lcom/labs/lab5/trace.txt");
+
+  // enables to save the output of printf function calls on a file
+  // [comment this out if you don't want/need it]
+  lcf_log_output("/home/lcom/labs/lab5/output.txt");
+
+  // handles control over to LCF
+  // [LCF handles command line arguments and invokes the right function]
+  if (lcf_start(argc, argv))
+    return 1;
+
+  // LCF clean up tasks
+  // [must be the last statement before return]
+  lcf_cleanup();
+
+  return 0;
+}
+
+int(video_test_init)(uint16_t mode, uint8_t delay) {
+  
+  /*Configure the video card for the desired graphics mode - Use the VESA Video Bios Extension (VBE)
+  Minix 3 boots in text mode, not in graphics mode*/
+
+  /*Access to BIOS services is via the SW interrupt instruction INT xx
+  The xx is 8 bit and specifies the service.
+  Any arguments required are passed via the processor registers
+  Standard BIOS services:
+  Interrupt vector (xx)     Service
+    10h                   video card
+    11h                 PC configuration
+    12h               memory configuration
+    16h                     keyboard
+
+
+sys_int86(struct reg86u *reg86p)
+
+Make a real-mode BIOS on behalf of a user-space device driver. This temporarily switches from 32-bit protected mode to 16-bit real-mode to access the BIOS calls. It is here to support the BIOS_WINI device driver.
+
+request parameters -> INT86_REG86: Address of request at the caller.
+return value -> OK: BIOS call successfully done.
+                EFAULT: Invalid request address
+*/
+
+  /*example of a BIOS call in Minix
+
+#include <machine/int86.h> // /usr/src/include/arch/i386
+int vg_exit() {
+reg86_t reg86;
+reg86.intno = 0x10;
+reg86.ah = 0x00;
+reg86.al = 0x03;
+if( sys_int86(&reg86) != OK ) {
+printf("vg_exit(): sys_int86() failed \n");
+return 1;
+}
+return 0;
+}
+
+*/
+
+  /*Write to VRAM to display on the screen what is requested
+  Map VRAM to the process’ address space*/
+
+  /*Reset the video card to the text mode used by Minix
+  You need only to call a function that we provide you*/
+
+  return 0;
+}
+
+int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
+                          uint16_t width, uint16_t height, uint32_t color) {
+  /* To be completed */
+  printf("%s(0x%03X, %u, %u, %u, %u, 0x%08x): under construction\n",
+         __func__, mode, x, y, width, height, color);
+
+  return 1;
+}
+
+int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
+  /* To be completed */
+  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__,
+         mode, no_rectangles, first, step);
+
+  return 1;
+}
+
+int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
+  /* To be completed */
+  printf("%s(%8p, %u, %u): under construction\n", __func__, xpm, x, y);
+
+  return 1;
+}
+
+int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,
+                     int16_t speed, uint8_t fr_rate) {
+  /* To be completed */
+  printf("%s(%8p, %u, %u, %u, %u, %d, %u): under construction\n",
+         __func__, xpm, xi, yi, xf, yf, speed, fr_rate);
+
+  return 1;
+}
+
+int(video_test_controller)() {
+  /* To be completed */
+  printf("%s(): under construction\n", __func__);
+
+  return 1;
+}

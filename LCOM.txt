@@ -1,17 +1,16 @@
-LCOM 1920
-
-https://web.fe.up.pt/~pfs/aulas/lcom2019/
+LCOM 1920 
 
 Open LCOM-VM in Linux terminal:
 ssh lcom@127.0.0.1 -p 2222
-Pass: lcom
+Pass:
+lcom
 
 See output (printf()'s):
 tail -f /var/log/messages
 
 Add content to SVN Repos:
 cd ~/labs
-svn import --username up201808546 labn https://svn.fe.up.pt/repos/lcom1920-t3g04/lab4  -m "Imported labn/"
+svn import --username up201808546 lab2 https://svn.fe.up.pt/repos/lcom1920-t3g04/lab4  -m "Imported lab4/"
 
 Creating a working copy:
 svn checkout --username up201808546 https://svn.fe.up.pt/repos/lcom1920-t3g04/proj ./proj --force
@@ -30,7 +29,7 @@ ls -la
 
 New working copy:
 cd ~/labs
-svn checkout https://svn.fe.up.pt/repos/lcom1920-t3g04/labn
+svn checkout https://svn.fe.up.pt/repos/lcom1920-t3g04/lab3
 
 Compile:
 make clean 
@@ -41,8 +40,8 @@ make clean && make
 make depend
 make (big projects)
 
-lcom_run labn
-lcom_stop labn
+lcom_run lab?
+lcom_stop lab?
 
 Quit:
 poweroff 

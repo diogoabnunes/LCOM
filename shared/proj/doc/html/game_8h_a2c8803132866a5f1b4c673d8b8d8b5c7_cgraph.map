@@ -1,0 +1,40 @@
+<map id="interrupt_handler" name="interrupt_handler">
+<area shape="rect" id="node1" title="Esta função faz o loop que lida com as interrupções dos dispositivos." alt="" coords="5,867,140,893"/>
+<area shape="rect" id="node2" href="$game_8c.html#a6519e190857cc9e1e6c3205bb662e76c" title="Esta função detecta os eventos do teclado." alt="" coords="188,183,363,209"/>
+<area shape="rect" id="node12" href="$game_8c.html#a0a0c3bb13d2afbcdd32aa1edf938cc87" title="Esta função desenha o número de segundos que passaram durante o jogo." alt="" coords="451,664,537,691"/>
+<area shape="rect" id="node24" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Esta função é o interrupt handler do teclado." alt="" coords="243,411,307,437"/>
+<area shape="rect" id="node27" href="$game_8c.html#a24f30339f3decf186f9a4cbb2e22ce4e" title="Esta função lida com os eventos do teclado." alt="" coords="214,943,337,969"/>
+<area shape="rect" id="node37" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Manipula as interrupções do rato." alt="" coords="233,993,318,1020"/>
+<area shape="rect" id="node38" href="$mouse_8c.html#a63be86a8432c1bfb80d2cf0fee13d73c" title="brief Decompõe o conteúdo dos pacotes recebidos do rato nas variáveis da estrutura do rato." alt="" coords="219,1044,332,1071"/>
+<area shape="rect" id="node3" href="$cards_8c.html#a62281bcc18b27cad0a00c38ad9de6453" title="Esta função analisa se o par de cartas escolhido é o par correto." alt="" coords="433,157,555,184"/>
+<area shape="rect" id="node4" href="$cards_8c.html#a355164bea2158325b293ff5bcf37749b" title="Esta função prepara o deck para um jogo." alt="" coords="446,208,542,235"/>
+<area shape="rect" id="node7" href="$dot_8c.html#a6a9ae890a6c90aecd9841d7897bddcf1" title="Esta função move o cursor para baixo." alt="" coords="443,259,545,285"/>
+<area shape="rect" id="node8" href="$dot_8c.html#a1bcdef3d6a784fc52538d9c74c9b5007" title="Esta função move o cursor para a esquerda." alt="" coords="450,309,538,336"/>
+<area shape="rect" id="node9" href="$dot_8c.html#acea2e8a0246b0ab74ac3393f0e7efdbe" title="Esta função move o cursor para a direita." alt="" coords="446,5,542,32"/>
+<area shape="rect" id="node10" href="$dot_8c.html#af803177e9c99355f881346eb59baaf34" title="Esta função move o cursor para cima." alt="" coords="453,56,535,83"/>
+<area shape="rect" id="node11" href="$cards_8c.html#a140dd13e55249f1523fca60f47cd24ca" title="Esta função faz a ação de virar uma carta." alt="" coords="455,107,533,133"/>
+<area shape="rect" id="node5" href="$cards_8c.html#ac0d9dd174b552b679132b24fb5aaffb9" title="Esta função embaralha as cores jogáveis para que cada jogo tenha cores diferentes." alt="" coords="637,233,745,260"/>
+<area shape="rect" id="node6" href="$cards_8c.html#a5456ca7b1ebe815ec5ba04af64b83b59" title="Esta função embaralha o deck de cartas para que cada jogo tenha posições diferentes." alt="" coords="641,183,741,209"/>
+<area shape="rect" id="node13" href="$xpms_8c.html#a197c6ebf3d393ec01fd3fc0469f14d24" title="Desenha o algarismo 0." alt="" coords="659,385,722,412"/>
+<area shape="rect" id="node15" href="$xpms_8c.html#abca830b21e20abb11abca7dc4ad391b9" title="Desenha o algarismo 1." alt="" coords="659,436,722,463"/>
+<area shape="rect" id="node16" href="$xpms_8c.html#a193cf48fd1766ea23f2de83d7b20aa1f" title="Desenha o algarismo 2." alt="" coords="659,487,722,513"/>
+<area shape="rect" id="node17" href="$xpms_8c.html#af8b1e4a597ad32f4422692d16e7fe469" title="Desenha o algarismo 3." alt="" coords="659,537,722,564"/>
+<area shape="rect" id="node18" href="$xpms_8c.html#ac743590d5543d92201ab9464e5b7a6ca" title="Desenha o algarismo 4." alt="" coords="659,588,722,615"/>
+<area shape="rect" id="node19" href="$xpms_8c.html#ab3b2bf50948ea2fdc42c384c480d35e7" title="Desenha o algarismo 5." alt="" coords="659,639,722,665"/>
+<area shape="rect" id="node20" href="$xpms_8c.html#a8841007c107da645526554fb3b639756" title="Desenha o algarismo 6." alt="" coords="659,689,722,716"/>
+<area shape="rect" id="node21" href="$xpms_8c.html#ac4684d2e5916b06554cd336c76d05709" title="Desenha o algarismo 7." alt="" coords="659,740,722,767"/>
+<area shape="rect" id="node22" href="$xpms_8c.html#a078254f0a672afa6804476accbd3c172" title="Desenha o algarismo 8." alt="" coords="659,791,722,817"/>
+<area shape="rect" id="node23" href="$xpms_8c.html#a9d2327c833ea334bda58ce89679f59ca" title="Desenha o algarismo 9." alt="" coords="659,841,722,868"/>
+<area shape="rect" id="node14" href="$video_8c.html#a78a5d8f65149c64461c4faeac43f8407" title="Esta função desenha uma imagem xpm no ecrã." alt="" coords="804,816,921,843"/>
+<area shape="rect" id="node25" href="$keyboard_8c.html#a60a97c4572b60c08e55ff7e053942678" title="Esta função chama sys_inb e incrementa um contador de chamadas de sys_inb." alt="" coords="633,335,748,361"/>
+<area shape="rect" id="node26" href="$keyboard_8c.html#a8b658c523d9ebc5c760114316d4751a6" title="Esta função chama sys_inb_count e faz o cast necessário." alt="" coords="411,411,577,437"/>
+<area shape="rect" id="node28" href="$xpms_8c.html#a094e5571a5243a9f958be215abb8c5af" title="Desenha o plano de fundo." alt="" coords="625,1044,756,1071"/>
+<area shape="rect" id="node29" href="$cards_8c.html#aecdc9b7a7b3978aff488255349ae196f" title="Esta função desenha as cartas do jogo." alt="" coords="449,1095,539,1121"/>
+<area shape="rect" id="node32" href="$xpms_8c.html#afb080b065468eb6c4415f60db741f8f8" title="Desenha o menu de instruções." alt="" coords="429,1159,559,1185"/>
+<area shape="rect" id="node33" href="$xpms_8c.html#aeb592a1d5d51ea02321528008f1e5187" title="Desenha o menu inicial." alt="" coords="433,1235,555,1261"/>
+<area shape="rect" id="node34" href="$xpms_8c.html#a3f87ee03e9e91170a9a0fd03ada15d10" title=" " alt="" coords="443,892,545,919"/>
+<area shape="rect" id="node35" href="$xpms_8c.html#ade613dca636bfc876dfe781009cbf23a" title="Desenha a tela de derrota." alt="" coords="441,943,547,969"/>
+<area shape="rect" id="node36" href="$xpms_8c.html#a07bacf25a86be1ae219337a2f2eb8a92" title="Desenha a tela de vitória." alt="" coords="443,993,545,1020"/>
+<area shape="rect" id="node30" href="$cards_8c.html#a850a010509db909def679d6021708c2d" title="Esta função desenha a parte da frente da carta." alt="" coords="625,1095,756,1121"/>
+<area shape="rect" id="node31" href="$cards_8c.html#a3a246589d2f02d52fac8a705ac162a7f" title="Esta função desenha a parte de trás da carta." alt="" coords="627,1145,754,1172"/>
+</map>

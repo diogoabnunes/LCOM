@@ -1,0 +1,6 @@
+<map id="vg_init" name="vg_init">
+<area shape="rect" id="node1" title="Esta função inicializa o modo gráfico no MINIX." alt="" coords="5,56,72,83"/>
+<area shape="rect" id="node2" href="$video_8c.html#ac850a7ff4f5b8b3a0da5d63b1347c3a4" title="Essa função atualiza as informações da VRAM de acordo com o modo." alt="" coords="136,5,252,32"/>
+<area shape="rect" id="node3" href="$video_8c.html#a5e3398f06946fddc91dc92c0df5ac2a9" title="Esta função mapeia a memória VRAM ao video_mem." alt="" coords="131,56,257,83"/>
+<area shape="rect" id="node4" href="$video_8c.html#a430711ee8dd8b9944c9393b6f333f48d" title="Esta função muda o console do MINIX do modo de texto para o modo gráfico." alt="" coords="120,107,268,133"/>
+</map>

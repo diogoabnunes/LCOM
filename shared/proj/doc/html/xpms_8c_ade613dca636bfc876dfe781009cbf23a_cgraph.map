@@ -1,0 +1,4 @@
+<map id="drawYouLose" name="drawYouLose">
+<area shape="rect" id="node1" title="Desenha a tela de derrota." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$video_8c.html#a78a5d8f65149c64461c4faeac43f8407" title="Esta função desenha uma imagem xpm no ecrã." alt="" coords="160,5,277,32"/>
+</map>

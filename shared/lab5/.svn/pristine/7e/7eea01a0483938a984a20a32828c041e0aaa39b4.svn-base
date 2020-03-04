@@ -1,0 +1,28 @@
+#ifndef _LCOM_VBE_H_
+#define _LCOM_VBE_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+
+#define VIDEOCARD_SERVICE 0x10
+#define PC_CONFIGURATION_SERVICE 0x11
+#define MEMORY_CONFIGURATION_SERVICE 0x12
+#define KEYBOARD_SERVICE 0x16
+
+#define SET_VBE_MODE 0x4F02
+#define RETURN_VBE_MODE_INFO 0x4F01
+#define GET_VBE_CTRL_INFO 0x4F00
+
+#define SET_LINEAR_MODE 1<<14
+
+#define DIRECT_COLOR 0x06
+#define INDEXED_COLOR 0x04
+
+#define MODE_1024x768 0x105
+#define MODE_640x480 0x110
+#define MODE_800x600 0x115
+#define MODE_1280x1024 0x11A
+#define MODE_1152x864 0x14C
+
+#endif /* _LCOM_VBE_H */
+

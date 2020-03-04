@@ -1,0 +1,10 @@
+#ifndef _LCOM_VIDEO_H_
+#define _LCOM_VIDEO_H_
+
+#include <lcom/lcf.h>
+#include <stdint.h>
+#include <machine/int86.h>
+
+
+
+#endif /* _LCOM_VIDEO_H */

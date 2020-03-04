@@ -1,0 +1,12 @@
+<map id="detect_keyboard_event" name="detect_keyboard_event">
+<area shape="rect" id="node1" title="Esta função detecta os eventos do teclado." alt="" coords="5,157,180,184"/>
+<area shape="rect" id="node2" href="$cards_8c.html#a62281bcc18b27cad0a00c38ad9de6453" title="Esta função analisa se o par de cartas escolhido é o par correto." alt="" coords="228,5,349,32"/>
+<area shape="rect" id="node3" href="$cards_8c.html#a355164bea2158325b293ff5bcf37749b" title="Esta função prepara o deck para um jogo." alt="" coords="241,56,337,83"/>
+<area shape="rect" id="node6" href="$dot_8c.html#a6a9ae890a6c90aecd9841d7897bddcf1" title="Esta função move o cursor para baixo." alt="" coords="238,107,339,133"/>
+<area shape="rect" id="node7" href="$dot_8c.html#a1bcdef3d6a784fc52538d9c74c9b5007" title="Esta função move o cursor para a esquerda." alt="" coords="245,157,333,184"/>
+<area shape="rect" id="node8" href="$dot_8c.html#acea2e8a0246b0ab74ac3393f0e7efdbe" title="Esta função move o cursor para a direita." alt="" coords="241,208,337,235"/>
+<area shape="rect" id="node9" href="$dot_8c.html#af803177e9c99355f881346eb59baaf34" title="Esta função move o cursor para cima." alt="" coords="247,259,330,285"/>
+<area shape="rect" id="node10" href="$cards_8c.html#a140dd13e55249f1523fca60f47cd24ca" title="Esta função faz a ação de virar uma carta." alt="" coords="249,309,328,336"/>
+<area shape="rect" id="node4" href="$cards_8c.html#ac0d9dd174b552b679132b24fb5aaffb9" title="Esta função embaralha as cores jogáveis para que cada jogo tenha cores diferentes." alt="" coords="397,31,505,57"/>
+<area shape="rect" id="node5" href="$cards_8c.html#a5456ca7b1ebe815ec5ba04af64b83b59" title="Esta função embaralha o deck de cartas para que cada jogo tenha posições diferentes." alt="" coords="401,81,501,108"/>
+</map>

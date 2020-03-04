@@ -1,0 +1,29 @@
+#include "mouse.h"
+
+int mouse_subscribe_int(int *bit_no)
+{
+  (*bit_no) = BIT(hookID);
+
+  if (sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hookID) != 0)
+  {
+    printf("Failed to subscribe the KBC interrupts.\n");
+    return 1;
+  }
+
+  return 0;
+}
+
+int mouse_unsubscribe_int()
+{
+  if (sys_irqrmpolicy(&hookID) != 0)
+  {
+    printf("Failed to unsubscribe the interrupt of the associated hook.\n");
+    return 1;
+  }
+  return 0;
+}
+
+void (mouse_ih)()
+{
+	
+}

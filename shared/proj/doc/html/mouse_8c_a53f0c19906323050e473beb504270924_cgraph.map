@@ -1,0 +1,5 @@
+<map id="check_gesture" name="check_gesture">
+<area shape="rect" id="node1" title="Esta função deteta o evento do rato e atualiza a máquina de estados do rato." alt="" coords="5,31,121,57"/>
+<area shape="rect" id="node2" href="$mouse_8c.html#a3fdf68a69c009b2a635b222d6937fa42" title="Tal como o nome indica, deteta o evento do rato." alt="" coords="171,5,329,32"/>
+<area shape="rect" id="node3" href="$mouse_8c.html#a170f615c35f005838a4e19dd0dc911e5" title="Reconhece o evento do rato e atualiza a máquina de estados do rato." alt="" coords="169,56,331,83"/>
+</map>

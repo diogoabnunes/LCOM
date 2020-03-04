@@ -1,0 +1,11 @@
+<map id="start_game" name="start_game">
+<area shape="rect" id="node1" title="Esta função prepara o jogo que iniciará" alt="" coords="5,132,101,159"/>
+<area shape="rect" id="node2" href="$cards_8c.html#a355164bea2158325b293ff5bcf37749b" title="Esta função prepara o deck para um jogo." alt="" coords="189,31,285,57"/>
+<area shape="rect" id="node5" href="$keyboard_8c.html#a8eee4d0a15beada731a514481b5ad4bf" title="Esta função subscreve as interrupções do teclado." alt="" coords="149,81,324,108"/>
+<area shape="rect" id="node6" href="$mouse_8c.html#a9da18257ff113b686bb826d154bfaa87" title="Esta função subscreve as interrupções do rato." alt="" coords="157,132,316,159"/>
+<area shape="rect" id="node7" href="$timer_8c.html#ac57a7e1140a7e00ad95ac5488d2a671b" title=" " alt="" coords="161,183,312,209"/>
+<area shape="rect" id="node8" href="$mouse_8c.html#ac27fa9c63737ce6b9e3319d56c6465fb" title="Tal como o nome indica, escreve um argumento command na entrada do rato." alt="" coords="183,233,290,260"/>
+<area shape="rect" id="node3" href="$cards_8c.html#ac0d9dd174b552b679132b24fb5aaffb9" title="Esta função embaralha as cores jogáveis para que cada jogo tenha cores diferentes." alt="" coords="379,5,487,32"/>
+<area shape="rect" id="node4" href="$cards_8c.html#a5456ca7b1ebe815ec5ba04af64b83b59" title="Esta função embaralha o deck de cartas para que cada jogo tenha posições diferentes." alt="" coords="383,56,483,83"/>
+<area shape="rect" id="node9" href="$mouse_8c.html#a1c8f952961c60ebb6cf308a8462b8ee4" title="Tal como o nome indica, escreve um argumento command numa entrada port." alt="" coords="372,233,495,260"/>
+</map>
